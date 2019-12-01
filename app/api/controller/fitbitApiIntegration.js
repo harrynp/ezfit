@@ -3,7 +3,7 @@ const axios = require('axios');
 const qs = require('querystring');
 const authFlow = require('../controller/authflow');
 const moment = require('moment');
-
+const dtree = require('../../workoutmodel/WorkoutModelTrainer');
 async function checkTokenExpiry(tokenExpiry, userInfo) {
     try {
         const refreshRequired = Date.now() > tokenExpiry ? true : false;
@@ -25,9 +25,7 @@ async function checkTokenExpiry(tokenExpiry, userInfo) {
 async function checkTokenStatus(userInfo) {
     try {
         if (userInfo) {
-            if (
-                authFlow.checkTokenValidity(userInfo.authToken) === false
-            ) {
+            if (authFlow.checkTokenValidity(userInfo.authToken) === false) {
                 return false;
             }
             const tokenExpiry = userInfo.authToken.expires_in;
@@ -44,7 +42,9 @@ async function checkTokenStatus(userInfo) {
         throw err;
     }
 }
-
+// async function predictor() {
+//     const model = await dtree.trainModel();
+// }
 async function getActivitySummary(req, res, next) {
     try {
         const userInfo = await userModel.findById(req.body.userId);
@@ -67,14 +67,14 @@ async function getActivitySummary(req, res, next) {
                     },
                 }
             );
-            // console.log(resp.data);
+            // await predictor();
             res.json({
                 status: 'success',
                 message: 'Successfully retrieved activity summary',
                 data: resp.data,
             });
         } catch (err) {
-            console.log(err.response.data.errors);
+            console.log(err);
             res.json({
                 status: 'error',
                 message: 'Error retrieving activity summary',
@@ -107,14 +107,14 @@ async function getCaloriesBurned(req, res, next) {
                 }
             );
             // console.log(resp.data);
-            const caloriesBurnedData = resp.data[
-                'activities-calories'
-            ].map(obj => {
-                let rObj = {};
-                rObj.dateTime = obj.dateTime;
-                rObj.value = parseInt(obj.value);
-                return rObj;
-            });
+            const caloriesBurnedData = resp.data['activities-calories'].map(
+                obj => {
+                    let rObj = {};
+                    rObj.dateTime = obj.dateTime;
+                    rObj.value = parseInt(obj.value);
+                    return rObj;
+                }
+            );
             res.json({
                 status: 'success',
                 message: 'Successfully retrieved calories',
@@ -174,4 +174,10 @@ async function getHeartRate(req, res, next) {
     }
 }
 
-module.exports = { getActivitySummary, getCaloriesBurned, getHeartRate };
+async function getWeightData() {}
+module.exports = {
+    getActivitySummary,
+    getCaloriesBurned,
+    getHeartRate,
+    getWeightData,
+};

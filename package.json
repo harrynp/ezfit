@@ -1,46 +1,52 @@
 {
-  "name": "ezphr",
-  "version": "1.0.0",
-  "description": "An easy to use PHR.",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "cd client && npm run build && cd ../ && npm run start",
-    "start": "node app.js",
-    "compile": "cd client && npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/harrynp/ezphr.git"
-  },
-  "keywords": [
-    "PHR"
-  ],
-  "author": "Harry Pham, Ashwin Balachandran, Keith Tachibana",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/harrynp/ezphr/issues"
-  },
-  "homepage": "https://github.com/harrynp/ezphr#readme",
-  "dependencies": {
-    "@material-ui/core": "^4.5.1",
-    "@material-ui/icons": "^4.5.1",
-    "axios": "^0.19.0",
-    "bcrypt": "^3.0.6",
-    "body-parser": "^1.19.0",
-    "create-react-app": "^3.2.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-validator": "^6.2.0",
-    "jsonwebtoken": "^8.5.1",
-    "mailgun-js": "^0.22.0",
-    "moment": "^2.24.0",
-    "mongoose": "^5.7.5",
-    "morgan": "^1.9.1",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.2.0",
-    "serve-favicon": "^2.5.0"
-  }
+    "name": "ezphr",
+    "version": "1.0.0",
+    "description": "An easy to use Fitness tracker.",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "deploy": "cd client && npm run build && cd ../ && npm run start",
+        "start": "node app.js",
+        "compile": "cd client && npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/harrynp/ezphr.git"
+    },
+    "keywords": [
+        "PHR"
+    ],
+    "author": "Harry Pham, Ashwin Balachandran, Keith Tachibana",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/harrynp/ezphr/issues"
+    },
+    "homepage": "https://github.com/harrynp/ezphr#readme",
+    "dependencies": {
+        "@material-ui/core": "^4.5.1",
+        "@material-ui/icons": "^4.5.1",
+        "axios": "^0.19.0",
+        "bcrypt": "^3.0.6",
+        "body-parser": "^1.19.0",
+        "create-react-app": "^3.2.0",
+        "csv": "^5.3.0",
+        "csv-parser": "^2.3.2",
+        "csv-writer": "^1.5.0",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-validator": "^6.2.0",
+        "fast-csv": "^3.4.0",
+        "fs": "0.0.1-security",
+        "jsonwebtoken": "^8.5.1",
+        "mailgun-js": "^0.22.0",
+        "moment": "^2.24.0",
+        "mongoose": "^5.7.5",
+        "morgan": "^1.9.1",
+        "react": "^16.10.2",
+        "react-dom": "^16.10.2",
+        "react-router-dom": "^5.1.2",
+        "react-scripts": "^3.2.0",
+        "serve-favicon": "^2.5.0",
+        "skmeans": "^0.11.2"
+    }
 }
