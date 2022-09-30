@@ -9,7 +9,7 @@ Flask_RESTful == 0.3.7
 
 # app.py: 5
 # build_model.py: 3
-joblib == 0.13.2
+joblib == 1.2.0
 
 # build_model.py: 4
 matplotlib == 3.0.3
