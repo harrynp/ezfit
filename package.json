@@ -32,7 +32,7 @@
     "create-react-app": "^3.2.0",
     "csv": "^5.3.0",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-naked-redirect": "^0.1.4",
     "express-sslify": "^1.2.0",
     "express-validator": "^6.2.0",
